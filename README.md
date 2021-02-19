@@ -21,4 +21,13 @@
 ### imports 数组  
 #### 模块的 imports 数组只会出现在 @NgModule 元数据对象中。它告诉 Angular 该模块想要正常工作，还需要哪些模块。  
 ### providers 数组
-#### providers 数组中列出了该应用所需的服务。当直接把服务列在这里时，它们是全应用范围的。当你使用特性模块和惰性模块时，它们是范围化的。  
+#### providers 数组中列出了该应用所需的服务。当直接把服务列在这里时，它们是全应用范围的。当你使用特性模块和惰性模块时，它们是范围化的。   
+## 5.常用 Angular 模块  
+### BrowserModule 
+### CommonModule 
+### FormsModule 
+### ReactiveFormsModule 
+### RouterModule 
+### HttpClientModule  
+### 对于运行在浏览器中的应用来说，都必须在根模块中 AppMoodule 导入 BrowserModule,因为它提供了启动和运行浏览器应用时某些必须的服务。BrowserModule 的提供者是面向整个应用的，所以它只能在根模块中使用，而不是特性模块。特性模块只需要 CommonModule 中的常用指令，它们不需要重新安装所有全应用级的服务。  
+### 如果你把 BrowserModule 导入了惰性加载的特性模块中，Angular 就会返回一个错误，并告诉你要改用 CommonModule。
